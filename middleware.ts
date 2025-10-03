@@ -37,7 +37,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.rewrite(url)
   }
 
-  return new NextResponse('Not Found', { status: 404 })
+  url.pathname = '/not-found'
+  return NextResponse.rewrite(url)
 }
 
 export const config = {
