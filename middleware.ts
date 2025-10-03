@@ -17,36 +17,21 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  const subdomain = hostname.split('.')[0]
+  const parts = hostname.split('.')
+  const subdomain = parts.length > 2 ? parts[0] : ''
   const validTenants = ['branch1', 'branch2']
 
-  if (hostname === 'softwarewow.co' || hostname === 'www.softwarewow.co') {
+  if (!subdomain || subdomain === 'www' || hostname === 'softwarewow.co') {
     url.pathname = `/tenants/default${url.pathname}`
     return NextResponse.rewrite(url)
   }
 
-  if (
-    subdomain &&
-    subdomain !== 'www' &&
-    subdomain !== 'localhost' &&
-    !hostname.includes('vercel.app') &&
-    validTenants.includes(subdomain)
-  ) {
+  if (validTenants.includes(subdomain)) {
     url.pathname = `/tenants/${subdomain}${url.pathname}`
     return NextResponse.rewrite(url)
   }
 
-  if (
-    subdomain &&
-    subdomain !== 'www' &&
-    subdomain !== 'localhost' &&
-    !hostname.includes('vercel.app') &&
-    hostname.includes('softwarewow.co')
-  ) {
-    return new NextResponse('Not Found', { status: 404 })
-  }
-
-  return NextResponse.next()
+  return new NextResponse('Not Found', { status: 404 })
 }
 
 export const config = {
