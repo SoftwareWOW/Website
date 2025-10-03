@@ -3,7 +3,7 @@ import HeroGradientAnimation from '@/components/shared/HeroGradientAnimation'
 import Link from 'next/link'
 
 export const metadata = {
-  title: '404 || Not Found',
+  title: '404 | Not Found',
 }
 
 const NotFound = () => {
@@ -17,7 +17,7 @@ const NotFound = () => {
             <h2 className="mb-8 mt-8 text-[36px] font-normal leading-[1.1] max-lg:leading-[1.33] md:mb-[50px] lg:text-[87px] lg:tracking-[-2.83px]">
               Page not Found
             </h2>
-            <Link href="/" className="rv-button rv-button-primary">
+            <Link href="https://www.softwarewow.co" className="rv-button rv-button-primary">
               <div className="rv-button-top text-center">
                 <span>Back to Homepage</span>
               </div>
