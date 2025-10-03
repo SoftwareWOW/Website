@@ -3,9 +3,7 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone()
-  const rawHost = req.headers.get('host') || ''
-
-  const hostname = rawHost.split(':')[0]
+  const hostname = req.headers.get('host') || ''
 
   if (
     url.pathname.startsWith('/_next') ||
@@ -19,22 +17,24 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  const normalizedHost = hostname.replace(/^www\./, '')
-  const subdomain = normalizedHost.split('.')[0]
-
+  const subdomain = hostname.split('.')[0]
   const validTenants = ['branch1', 'branch2']
-
-  if (normalizedHost === 'softwarewow.co') {
+  if (hostname === 'softwarewow.co' || subdomain === 'softwarewow') {
     url.pathname = `/tenants/default${url.pathname}`
     return NextResponse.rewrite(url)
   }
-
-  if (validTenants.includes(subdomain)) {
+  if (
+    subdomain &&
+    subdomain !== 'www' &&
+    subdomain !== 'localhost' &&
+    !hostname.includes('vercel.app') &&
+    validTenants.includes(subdomain)
+  ) {
     url.pathname = `/tenants/${subdomain}${url.pathname}`
     return NextResponse.rewrite(url)
   }
 
-  return new NextResponse('Not Found', { status: 404 })
+  return NextResponse.next()
 }
 
 export const config = {
