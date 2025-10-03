@@ -3,7 +3,9 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone()
-  const hostname = req.headers.get('host') || ''
+  const rawHost = req.headers.get('host') || ''
+
+  const hostname = rawHost.split(':')[0]
 
   if (
     url.pathname.startsWith('/_next') ||
@@ -17,10 +19,12 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  const subdomain = hostname.split('.')[0]
+  const normalizedHost = hostname.replace(/^www\./, '')
+  const subdomain = normalizedHost.split('.')[0]
+
   const validTenants = ['branch1', 'branch2']
 
-  if (hostname === 'softwarewow.co' || hostname === 'www.softwarewow.co' || subdomain === 'softwarewow') {
+  if (normalizedHost === 'softwarewow.co') {
     url.pathname = `/tenants/default${url.pathname}`
     return NextResponse.rewrite(url)
   }
@@ -30,7 +34,7 @@ export function middleware(req: NextRequest) {
     return NextResponse.rewrite(url)
   }
 
-  return new NextResponse('Not found', { status: 404 })
+  return new NextResponse('Not Found', { status: 404 })
 }
 
 export const config = {
