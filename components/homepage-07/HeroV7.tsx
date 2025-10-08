@@ -14,7 +14,7 @@ const HeroV7 = () => {
       <RevealWrapper className="mx-auto max-w-screen-xl px-5">
         <div>
           <h1 className="font-normal max-lg:text-center xl:text-[96px] xl:leading-[1.3] xl:tracking-[-2.88px]">
-            Design Studio
+            Every
             <CtaImageSlider
               slides={[
                 { id: '1', img: '/images/agent/01.jpg' },
@@ -22,13 +22,12 @@ const HeroV7 = () => {
                 { id: '3', img: '/images/agent/03.jpg' },
               ]}
             />
-            Shaping Web3, Tech & AI Horizons
+            Small Business' Favourite Partner
           </h1>
         </div>
 
         <p className="mt-10 max-w-[770px] font-normal max-lg:mx-auto">
-          As a agency we are working on client projects, official Webflow Templates and cloneables for the Webflow
-          community.
+          We provide the tools and expertise you need to reach more customers, grow your brand, and increase your sales!
         </p>
       </RevealWrapper>
 

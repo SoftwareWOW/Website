@@ -1,7 +1,7 @@
 'use client'
 
-import logoDark from '@/public/images/logo-white.png'
-import logo from '@/public/images/logo.png'
+import logoDark from '@/public/images/logo-light.webp'
+import logo from '@/public/images/logo.webp'
 import { gsap } from 'gsap'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -287,8 +287,8 @@ export default function Navbar() {
         </div>
         <nav
           className={`fixed z-[1000] w-full px-5 pt-1 transition duration-300 ease-linear will-change-transform sm:px-8 sm:pt-5 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-          <div className="flex justify-between">
-            <Link href="/" className="relative z-10">
+          <div className="flex justify-between px-6">
+            <Link href="/" className="relative z-10 pt-6 sm:pt-3">
               <Image
                 className="inline-block max-h-[68px] w-auto dark:hidden"
                 src={logo}
