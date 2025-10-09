@@ -320,7 +320,7 @@ export default function Navbar() {
       <nav
         ref={menuRef}
         data-lenis-prevent="true"
-        className="menu fixed right-6 top-0 z-[99999] min-h-screen w-full overflow-y-auto opacity-0 before:absolute before:top-0 before:w-[1px] before:bg-backgroundBody before:bg-opacity-10 before:content-none md:before:left-[40%] md:before:h-screen md:before:content-[''] lg:before:left-[32%] lg:before:h-[calc(100vh-87px)] xl:before:left-[40%] xl:before:h-[calc(100vh-94px)]">
+        className="menu fixed right-6 top-0 z-[99999] min-h-screen w-full overflow-y-auto opacity-0 before:absolute before:top-0 before:w-[1px] before:bg-backgroundBody before:bg-opacity-10 before:content-none md:before:left-[40%] md:before:h-screen md:before:content-[''] lg:before:left-[32%] lg:before:h-[calc(100vh-87px)] xl:before:left-[40%] xl:before:h-[calc(100vh-94px)] [&::-webkit-scrollbar]:hidden">
         <button
           ref={closeBtnRef}
           onClick={closeMenu}
@@ -339,7 +339,7 @@ export default function Navbar() {
         <div className="menu-footer fixed bottom-0 w-full border-t border-white border-opacity-10 max-lg:hidden lg:block">
           <div className="menu-footer-content mx-auto flex max-w-[300px] flex-col justify-between py-8 sm:max-w-[400px] md:max-w-[600px] md:flex-row lg:max-w-[900px] xl:max-w-[1130px]">
             <p className="mb-4 w-full text-sm text-white md:mb-0 md:w-auto">
-              2261 Market Street #5039 San Francisco, CA 94114
+              90 Burnhamthorpe Rd West, 1400 Mississauga, ON L5B 3C3 🇨🇦
             </p>
             <SocialIcons />
           </div>
