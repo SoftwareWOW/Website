@@ -17,7 +17,18 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  const validTenants = ['branch1', 'branch2']
+  const validTenants = [
+    'host',
+    'marketing',
+    'website',
+    'design',
+    'events',
+    'hub',
+    'intelligence',
+    'accelerate',
+    'social',
+    'software',
+  ]
 
   const cleanHostname = hostname.split(':')[0]
   const parts = cleanHostname.split('.')
@@ -27,7 +38,7 @@ export function middleware(req: NextRequest) {
     subdomain = parts[0]
   }
 
-  if (subdomain === '' || cleanHostname === 'softwarewow.co' || cleanHostname === 'www.softwarewow.co') {
+  if (subdomain === '' || cleanHostname === 'wow.onl' || cleanHostname === 'www.wow.onl') {
     url.pathname = `/tenants/default${url.pathname}`
     return NextResponse.rewrite(url)
   }

@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import FooterV2 from './FooterV2'
 import Navbar from './Navbar'
 
@@ -8,11 +8,11 @@ const LayoutTwo = ({
   children: ReactNode
 }>) => {
   return (
-    <Fragment>
+    <>
       <Navbar />
       <main className="relative z-10 bg-backgroundBody dark:bg-secondary">{children}</main>
       <FooterV2 />
-    </Fragment>
+    </>
   )
 }
 
