@@ -13,11 +13,11 @@ const NotFound = () => {
         <HeroGradientAnimation />
         <div className="container">
           <RevealWrapper className="flex flex-col items-center justify-center">
-            <h1 className="font-instrument text-[180px] md:text-[490px] md:leading-[1.05]">404</h1>
+            <h1 className="font-instrument text-[130px] md:text-[400px] md:leading-[1.05]">404</h1>
             <h2 className="mb-8 mt-8 text-[36px] font-normal leading-[1.1] max-lg:leading-[1.33] md:mb-[50px] lg:text-[87px] lg:tracking-[-2.83px]">
               Page not Found
             </h2>
-            <Link href="https://www.softwarewow.co" className="rv-button rv-button-primary">
+            <Link href="https://www.wow.onl" className="rv-button rv-button-primary">
               <div className="rv-button-top text-center">
                 <span>Back to Homepage</span>
               </div>
