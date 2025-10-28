@@ -1,4 +1,4 @@
-import ComingSoon from '@/app/coming-soon/page'
+import ComingSoon from '@/components/ComingSoon'
 
 export const metadata = {
   title: 'WOW Social | Where content become community',
