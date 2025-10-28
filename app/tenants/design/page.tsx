@@ -1,10 +1,4 @@
-import LayoutOne from '@/components/shared/LayoutOne'
-import Hero from '@/components/homepage-02/HeroV2'
-import Portfolio from '@/components/homepage-02/PortfolioV2'
-import About from '@/components/shared/About'
-import ClientsV3 from '@/components/shared/ClientsV3'
-import ServicesV8 from '@/components/shared/ServicesV8'
-import Testimonial from '@/components/homepage-02/ProcessV2'
+import ComingSoon from '@/app/coming-soon/page'
 
 export const metadata = {
   title: 'WOW Design | Where imagination becomes design.',
@@ -12,13 +6,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <LayoutOne>
-      <Hero />
-      <About />
-      <Portfolio />
-      <ClientsV3 />
-      <ServicesV8 />
-      <Testimonial />
-    </LayoutOne>
+    <>
+      <ComingSoon url="design.wow.onl" />
+    </>
   )
 }

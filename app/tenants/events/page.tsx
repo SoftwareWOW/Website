@@ -1,13 +1,13 @@
 import ComingSoon from '@/app/coming-soon/page'
 
 export const metadata = {
-  title: 'SoftwareWOW | Where ideas become technologies',
+  title: 'WOW Events | Where connections become opportunities',
 }
 
 export default function Page() {
   return (
     <>
-      <ComingSoon url="software.wow.onl" />
+      <ComingSoon url="events.wow.onl" />
     </>
   )
 }
