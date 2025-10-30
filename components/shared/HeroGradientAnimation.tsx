@@ -28,7 +28,7 @@ const HeroGradientAnimation = ({ scale = false }: PropsType) => {
         const wrapperAnimation = gsap.to(wrapper, {
           scale: 0.6,
           repeat: -1,
-          duration: 3,
+          duration: 6,
           yoyo: true,
           ease: Linear.easeNone,
         })
